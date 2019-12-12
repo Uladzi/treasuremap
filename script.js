@@ -35,6 +35,11 @@ const height = $('img').height();
 let clicks = 0;
 let clicksLeft = 15;
 
+if (confirm("Привет!\nЦель игры - определить местонахождение клада, опираясь на подсказки.\nУ тебя 15 попыток.\n\nНу что, начинаем?") === false) {
+    alert("Пока!");
+    window.close();
+}
+
 const target = {
     x: getRandomNumber(width),
     y: getRandomNumber(height),
