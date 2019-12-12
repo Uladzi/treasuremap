@@ -1,0 +1,33 @@
+div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: rgb(158, 116, 9);
+}
+
+img {
+    width: 400px;
+    height: 400px;
+    cursor: pointer;
+}
+
+p {
+    font-size: 1.5rem;
+    text-align: center;
+    white-space: pre;
+}
+
+@media only all and (max-width:400px) {
+    img {
+        width: 100%;
+    }
+}
+
+@media only all and (max-width:320px) {
+    p {
+        font-size: 1rem;
+    }
+}
