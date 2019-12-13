@@ -35,8 +35,8 @@ const height = $('img').height();
 let clicks = 0;
 let clicksLeft = 15;
 
-if (confirm("Привет!\nЦель игры - определить местонахождение клада, опираясь на подсказки.\nУ тебя 15 попыток.\n\nНу что, начинаем?") === false) {
-    alert("Пока!");
+if (confirm('Привет!\nЦель игры - определить местонахождение клада, опираясь на подсказки.\nУ тебя 15 попыток.\n\nНу что, начинаем?') === false) {
+    alert('Пока!');
     window.close();
 }
 
@@ -52,15 +52,17 @@ $('img').click(function(event) {
     const distanceHint = getDistanceHint(distance);
     $('p').text(distanceHint);
 
-    if (distance < 8) {
-        $('h1').text("УРА!")
-        $('p').text("Клад найден!")
-        alert('Ура! Клад найден!\n\n Сделано попыток: ' + clicks);
+    if (clicks > 14 && distance >= 8) {
+        $('h1').text('КОНЕЦ ИГРЫ!');
+        $('p').text('Клад не найден');
+        alert('КОНЕЦ ИГРЫ!\nУвы! Попытки закончились. Клад не найден.');
+        window.close();
     }
 
-    if (clicks > 15) {
-        $('h1').text("КОНЕЦ ИГРЫ!")
-        $('p').text("Клад не найден")
-        alert("КОНЕЦ ИГРЫ!\nУвы! Попытки закончились. Клад не найден.")
+    if (distance < 8) {
+        $('h1').text('УРА!');
+        $('p').text('Клад найден!');
+        alert('Ура! Клад найден!\n\n Сделано попыток: ' + clicks);
+        window.close();
     }
 });
