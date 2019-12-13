@@ -2,4 +2,4 @@
 "Find a treasure" game
 
 #### deployed:
-https://uladzi.github.io/treasuremap
+https://treasuremap.netlify.com/
